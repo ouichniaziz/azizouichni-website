@@ -1,11 +1,29 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import React from "react";
 import CustomCursor from "../components/CustomCursor";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const techs = [
+    "HTML",
+    "CSS",
+    "Javascript",
+    "Typescript",
+    "React",
+    "Angular",
+    "Next.js",
+    "Nuxt",
+    "Mui",
+    "Express",
+    "Nest.js",
+    "Mongodb",
+    "PostegesSQL",
+    "Git / GitHub",
+    "Sass / Scss",
+  ];
   return (
-    <div className={styles.container}>
+    <div>
       <CustomCursor />
       <Head>
         <title>Aziz Ouichni</title>
@@ -14,19 +32,42 @@ const Home: NextPage = () => {
       </Head>
       <header>
         <nav className={styles.navigation}>
-          <a>
-            <p>Aziz Ouichni</p>
-          </a>
+          <div>by aziz ouichni</div>
+          <div className={styles.dark}>so dark?</div>
+          <div>2022</div>
         </nav>
       </header>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Hi, I&apos;m Aziz 👋</h1>
-        <div className={styles.about}>
+        <div>
           <p className={styles.intro}>
-            Current working (happily) as a fullstack developer at bulldozer.🦊
+            Hi! My name is Mohamed Aziz Ouichni and I&apos;m a fullstack
+            developer, currently working (happily) at{" "}
+            <span className={styles.bulldozer}>bulldozer</span>.🦊
           </p>
         </div>
+
+        <div className={styles.container}>
+          <p className={styles.intro}>
+            Technology I&apos;ve worked & <span>dabbled</span> with:
+          </p>
+          <ul className={styles.list}>
+            {techs.map((tech, i) => (
+              <li key={i} className={styles.tech}>
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <p className={styles.intro}>
+            If you have any questions or would like to have a chat, don&apos;t
+            hesitate to
+            <span> get in touch.</span>
+          </p>
+        </div>
+
       </main>
 
       <footer className={styles.footer}></footer>

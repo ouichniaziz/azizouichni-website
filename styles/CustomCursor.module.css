@@ -1,6 +1,6 @@
 .cursor {
   position: fixed;
-  z-index: 9999;
+  z-index: 100;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -8,4 +8,10 @@
   pointer-events: none;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 600px) {
+  .cursor {
+    display: none;
+  }
 }
