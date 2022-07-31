@@ -5,7 +5,7 @@ import CustomCursor from "../components/CustomCursor";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const techs = [
+  const techs: string[] = [
     "HTML",
     "CSS",
     "Javascript",
@@ -22,6 +22,32 @@ const Home: NextPage = () => {
     "Git / GitHub",
     "Sass / Scss",
   ];
+  const [darkTheme, setDarkTheme] = React.useState<any>(undefined);
+  
+  const handleToggle = () => {
+    setDarkTheme(Boolean(!darkTheme));
+  };
+
+  React.useEffect(() => {
+    if (darkTheme !== undefined) {
+      if (darkTheme) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        window.localStorage.setItem("theme", "light");
+      }
+    }
+  }, [darkTheme]);
+
+  React.useEffect(() => {
+    const root = window.document.documentElement;
+    const initialColorValue = root.style.getPropertyValue(
+      "--initial-color-mode"
+    );
+    setDarkTheme(initialColorValue === "dark");
+
+  }, []);
   return (
     <div>
       <CustomCursor />
@@ -33,7 +59,9 @@ const Home: NextPage = () => {
       <header>
         <nav className={styles.navigation}>
           <div>by aziz ouichni</div>
-          <div className={styles.dark}>so dark?</div>
+          <div onClick={handleToggle} className={styles.dark}>
+            {!darkTheme ? "so dark?" : "so light?"}
+          </div>
           <div>2022</div>
         </nav>
       </header>
@@ -67,7 +95,6 @@ const Home: NextPage = () => {
             <span> get in touch.</span>
           </p>
         </div>
-
       </main>
 
       <footer className={styles.footer}></footer>

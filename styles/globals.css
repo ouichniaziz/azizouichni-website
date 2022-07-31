@@ -2,7 +2,12 @@
 
 :root {
   --color-primary: #000;
-  --color-selection: #2a2a2a;
+  --color-text: #fff;
+}
+
+[data-theme="dark"] {
+  --color-primary: #fff;
+  --color-text: #000;
 }
 
 *,
@@ -17,12 +22,12 @@ body {
   font-family: "Manrope", sans-serif;
   cursor: none;
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-text);
 }
 
 ::selection {
-  background: #fff;
-  color: #2a2a2a;
+  background: var(--color-text);
+  color: var(--color-primary);
 }
 
 a {
