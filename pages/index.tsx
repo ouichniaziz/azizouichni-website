@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     "Express",
     "Nest.js",
     "Mongodb",
-    "PostegesSQL",
+    "PostgreSQL",
     "Git / GitHub",
     "Sass / Scss",
   ];
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         <nav className={styles.navigation}>
           <div>by aziz ouichni</div>
           <div onClick={handleToggle} className={styles.dark}>
-            {!darkTheme ? "so dark?" : "so light?"}
+            {!darkTheme ? "so dark?" : "lot of light?"}
           </div>
           <div>2022</div>
         </nav>

@@ -34,7 +34,7 @@
 
 .bulldozer {
   transition: 0s color;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--color-text);
 }
 
 .bulldozer:hover {
@@ -68,6 +68,12 @@
 @media (max-width: 600px) {
   .list {
     max-height: 400px;
+  }
+}
+
+@media (max-width: 410px) {
+  .list {
+    max-height: 800px;
   }
 }
 
