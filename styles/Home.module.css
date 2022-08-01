@@ -26,6 +26,10 @@
   font-size: 3.8rem;
 }
 
+.container {
+  opacity: 0;
+}
+
 .intro {
   max-width: 600px;
   line-height: 1.5;

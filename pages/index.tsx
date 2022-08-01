@@ -1,3 +1,4 @@
+import { gsap, Power3 } from "gsap";
 import type { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
@@ -23,7 +24,10 @@ const Home: NextPage = () => {
     "Sass / Scss",
   ];
   const [darkTheme, setDarkTheme] = React.useState<any>(undefined);
-  
+  const aboutRef = React.useRef(null);
+  const techRef = React.useRef(null);
+  const contactRef = React.useRef(null);
+
   const handleToggle = () => {
     setDarkTheme(Boolean(!darkTheme));
   };
@@ -46,8 +50,27 @@ const Home: NextPage = () => {
       "--initial-color-mode"
     );
     setDarkTheme(initialColorValue === "dark");
-
   }, []);
+
+  React.useEffect(() => {
+    gsap.from([aboutRef.current, techRef.current, contactRef.current], {
+      opacity: 0,
+      duration: 1,
+      y: -20,
+      stagger: {
+        amount: 1,
+      },
+    });
+    gsap.to([aboutRef.current, techRef.current, contactRef.current], {
+      opacity: 1,
+      duration: 1,
+      y: 0,
+      stagger: {
+        amount: 1,
+      },
+    });
+  }, []);
+
   return (
     <div>
       <CustomCursor />
@@ -67,7 +90,7 @@ const Home: NextPage = () => {
       </header>
 
       <main className={styles.main}>
-        <div>
+        <div ref={aboutRef} className={styles.container}>
           <p className={styles.intro}>
             Hi! My name is Mohamed Aziz Ouichni and I&apos;m a fullstack
             developer, currently working (happily) at{" "}
@@ -75,7 +98,7 @@ const Home: NextPage = () => {
           </p>
         </div>
 
-        <div className={styles.container}>
+        <div className={styles.container} ref={techRef}>
           <p className={styles.intro}>
             Technology I&apos;ve worked & <span>dabbled</span> with:
           </p>
@@ -88,7 +111,7 @@ const Home: NextPage = () => {
           </ul>
         </div>
 
-        <div>
+        <div className={styles.container} ref={contactRef}>
           <p className={styles.intro}>
             If you have any questions or would like to have a chat, don&apos;t
             hesitate to
