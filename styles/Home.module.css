@@ -11,9 +11,22 @@
 
 .dark {
   position: relative;
-  z-index: 9999999;
-  border-bottom: 1px solid var(--color-text);
   cursor: pointer;
+}
+
+.dark::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-text);
+  height: 1px;
+  width: 0;
+  left: 0;
+  bottom: -2px;
+  transition: 0.5s;
+}
+
+.dark:hover::after {
+  width: 100%;
 }
 
 .main {
@@ -37,16 +50,28 @@
 }
 
 .bulldozer {
-  transition: 0s color;
-  border-bottom: 2px solid var(--color-text);
+  position: relative;
+  transition: 1s color;
+}
+
+.bulldozer::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-text);
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.bulldozer:hover::after {
+  width: 0;
 }
 
 .bulldozer:hover {
   position: relative;
-  z-index: 9999999;
   color: #c18772;
-  border: none;
-  transition: 0.3s;
 }
 
 .list {
