@@ -101,7 +101,7 @@
 .contact::after {
   content: "";
   position: absolute;
-  background-color: white;
+  background-color: var(--color-text);
   height: 2px;
   width: 100%;
   left: 0;
