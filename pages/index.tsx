@@ -112,10 +112,16 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.container} ref={contactRef}>
-          <p className={styles.intro}>
+          <p className={styles.introcontact}>
             If you have any questions or would like to have a chat, don&apos;t
-            hesitate to
-            <span> get in touch.</span>
+            hesitate to get in {" "}
+            <a
+              href="https://www.linkedin.com/in/ouichniaziz/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className={styles.contact}>touch.</span>
+            </a>
           </p>
         </div>
       </main>

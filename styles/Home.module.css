@@ -49,6 +49,12 @@
   font-size: 2rem;
 }
 
+.introcontact {
+  max-width: 800px;
+  line-height: 1.5;
+  font-size: 2rem;
+}
+
 .bulldozer {
   position: relative;
   transition: 1s color;
@@ -84,6 +90,27 @@
 .tech {
   font-size: 2rem;
   padding: 0;
+}
+
+.contact {
+  position: relative;
+  font-weight: 600;
+  transition: 1s color;
+}
+
+.contact::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.contact:hover::after {
+  width: 0;
 }
 
 .footer {
