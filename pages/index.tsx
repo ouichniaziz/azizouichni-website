@@ -113,7 +113,7 @@ const Home: NextPage = () => {
 
         <div className={styles.container} ref={contactRef}>
           <p className={styles.introcontact}>
-            If youadadada questions or would like to have a chat, don&apos;t
+            If you have questions or would like to have a chat, don&apos;t
             hesitate to get in {" "}
             <a
               href="https://www.linkedin.com/in/ouichniaziz/"
