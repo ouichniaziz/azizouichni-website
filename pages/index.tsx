@@ -85,7 +85,7 @@ const Home: NextPage = () => {
           <div onClick={handleToggle} className={styles.dark}>
             {!darkTheme ? "so dark?" : "lot of light?"}
           </div>
-          <div>2022</div>
+          <div>{new Date().getFullYear()}</div>
         </nav>
       </header>
 
@@ -114,7 +114,7 @@ const Home: NextPage = () => {
         <div className={styles.container} ref={contactRef}>
           <p className={styles.introcontact}>
             If you have questions or would like to have a chat, don&apos;t
-            hesitate to get in {" "}
+            hesitate to get in{" "}
             <a
               href="https://www.linkedin.com/in/ouichniaziz/"
               target="_blank"
